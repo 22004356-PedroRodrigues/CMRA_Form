@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="text-box">
+      <h1 id="title">CONSULTA DE TOXINA BOTULÍNICA</h1>
+      <hr>
+      <p id="description">Registo de intervenção, Definição de Objetivos e Avaliação</p>
+    </div>
+  </header>
+  <div class="container">
+    <form id="survey-form" method="post" action="form_save.php">
+
+      <div class="labels">
+        <label id="name-label" for="name"><a style="color: white;">(Obrigatório)</a> Nome completo do
+          Profissional</label>
+      </div>
+      <div class="input-tab">
+        <input class="input-field" type="text" id="name" name="name" placeholder="Introduza o seu nome" required
+          autofocus>
+      </div>
+
+      <!--Field Campos de identificação-->
+      <fieldset style="border: white solid; margin-top: 100px;">
+        <legend>Campos de identificação</legend>
+        <div class="labels">
+          <label id="name-label" for="name_paciente"><a style="color: white;">(Obrigatório)</a> Nome do paciente</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="text" id="name_paciente" name="name_paciente" placeholder="Introduza o nome do paciente" required
+            autofocus>
+        </div>
+        <div class="labels">
+          <label id="number-label" for="processo"><a style="color: white;">(Obrigatório)</a> Nº Processo</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="number" id="processo" name="processo" min="1" max="120" placeholder="xxxxxxxxx"
+            required>
+        </div>
+        <div class="labels">
+          <label for="dropdown">Sexo Biológico</label>
+        </div>
+        <div class="input-tab">
+          <select id="dropdown" name="genero" required>
+            <option disabled value selected>Selecione uma opção</option>
+            <option value="0">Feminino</option>
+            <option value="1">Masculino</option>
+            <option value="2">Intersexo</option>
+            <option value="3">Anónimo</option>
+          </select>
+        </div>
+        
+        <div class="labels">
+          <label for="dropdown">Diagnóstico</label>
+        </div>
+        <div class="input-tab">
+          <select id="dropdown" name="diagnostsico" required>
+            <option disabled value selected>Selecione uma opção</option>
+            <optgroup label="Mais Frequentes">
+              <option value="0">Amputação não traumática</option>
+              <option value="1">Amputação traumática</option>
+              <option value="2">Défice congénito dos membros</option>
+              <option value="3">Doenças Neuromusculares</option>
+              <option value="4">ELA</option>
+              <option value="5">Esclerose Múltipla</option>
+              <option value="6">Lesão dos nervos periféricos</option>
+            </optgroup>
+            <optgroup label="Lesão Encefálica">
+              <option value="7">Lesão Encefálica (n traum) Anóxia</option>
+              <option value="8">Lesão Encefálica (n traum) AVC Hemorrágico</option>
+              <option value="9">Lesão Encefálica (n traum) AVC Isquémico</option>
+              <option value="10">Lesão Encefálica (n traum) Infecciosa</option>
+              <option value="11">Lesão Encefálica (n traum) Inflamatória</option>
+              <option value="12">Lesão Encefálica (n traum) Neoplasia</option>
+              <option value="13">Lesão Encefálica (traumática) TCE</option>
+            </optgroup>
+            <optgroup label="Lesão Medular">
+              <option value="14">Lesão Medular (n traum) congénita</option>
+              <option value="15">Lesão Medular (n traum) degenerativa</option>
+              <option value="16">Lesão Medular (n traum) iatrogénica</option>
+              <option value="17">Lesão Medular (n traum) infecciosa</option>
+              <option value="18">Lesão Medular (n traum) inflamatória</option>
+              <option value="19">Lesão Medular (n traum) neoplasica</option>
+              <option value="20">Lesão Medular (n traum) vascular</option>
+              <option value="21">Lesão Medular (traumática)</option>
+            </optgroup>
+            <optgroup label="Musculo-esqueletica">
+              <option value="22">Musculo-esqueletica - Ortotraum Major</option>
+              <option value="23">Musculo-esqueletica - Ortotraum Minor</option>
+              <option value="24">Musculo-esqueletica - Reumatologica</option>
+            </optgroup>
+            <optgroup label="Outros">
+              <option value="25">Paralisia Cerebral</option>
+              <option value="26">Pat do movimento</option>
+              <option value="27">Queimaduras</option>
+              <option value="28">Respiratória</option>
+              <option value="29">Seq pós covid</option>
+              <option value="30">Sind da imobilidade</option>
+              <option value="31">Sínd de Guillain-Barré</option>
+              <option value="32">Sínd polimalformativo</option>
+            </optgroup>
+          </select>
+        </div>
+
+      </fieldset>
+
+      <!--Field Escala de Ashwoth Modificada-->
+      <fieldset style="border: white solid;margin-top: 100px">
+        <legend>Escala de Ashwoth Modificada</legend>
+        <div class="input-tab" style="margin-top: 10px; width: 100%;margin-left: 0;">
+          <table id='table' style="border-collapse: collapse;">
+            <tr>
+              <th style="border: 1px solid white; width:100%; background-color: #a70432cc;">Descrição</th>
+              <th style="border: 1px solid white; background-color: #a70432cc;">Escala</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Tónus muscular normal</td>
+              <td style="border: 1px solid white; text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima no final do arco do
+                movimento</td>
+              <td style="border: 1px solid white; text-align: center;">1+</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima em menos de 1/2 do
+                arco do movimento</td>
+              <td style="border: 1px solid white; text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Aumento do tónus em quase todo o arco do movimento; segmento
+                facilmente mobilizável</td>
+              <td style="border: 1px solid white; text-align: center;">3</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Aumento do tónus considerável; movimento passivo é difícil</td>
+              <td style="border: 1px solid white; text-align: center;">4</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Segmento afetado em flexão ou extensão</td>
+              <td style="border: 1px solid white; text-align: center;">5</td>
+            </tr>
+          </table>
+        </div>
+
+
+        <fieldset style="border: white solid;">
+          <legend>Avaliação do Membro Superior</legend>
+
+
+          <table id='table' style="border-collapse: collapse;">
+            <tr>
+              <td style="border: 1px solid white; width:70%;">Ombro Esquerdo
+              </td>
+              <td style="border: 1px solid white;">
+                <div class="input-tab">
+                  <select id="dropdown" name="ombro_esquerdo">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">1</option>
+                    <option value="1">1+</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Tónus muscular normal</td>
+              <td style="border: 1px solid white; text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima no final do arco do
+                movimento</td>
+              <td style="border: 1px solid white; text-align: center;">1+</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima em menos de 1/2 do
+                arco do movimento</td>
+              <td style="border: 1px solid white; text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Aumento do tónus em quase todo o arco do movimento; segmento
+                facilmente mobilizável</td>
+              <td style="border: 1px solid white; text-align: center;">3</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Aumento do tónus considerável; movimento passivo é difícil</td>
+              <td style="border: 1px solid white; text-align: center;">4</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid white;">Segmento afetado em flexão ou extensão</td>
+              <td style="border: 1px solid white; text-align: center;">5</td>
+            </tr>
+          </table>
+
+          <div class="labels">
+            <label for="dropdown">Ombro Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="ombro_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Cotovelo Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="cotovelo_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Cotovelo Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="cotovelo_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="dedo_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="dedo_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <fieldset style="border: white solid; margin-top: 2%;">
+          <legend>Avaliação do Membro Inferior</legend>
+
+          <div class="labels">
+            <label for="dropdown">Anca</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Joelho</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Tibio-Társica/Pé</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <!--Field Força Muscular-->
+      <fieldset style="border: white solid;margin-top: 100px">
+        <legend>Força Muscular</legend>
+
+        <fieldset style="border: white solid;">
+          <legend>Avaliação do Membro Superior</legend>
+
+          <div class="labels">
+            <label for="dropdown">Ombro Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="ombro_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Ombro Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="ombro_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Cotovelo Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="cotovelo_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Cotovelo Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="cotovelo_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="dedo_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Direito</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="dedo_direito">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <fieldset style="border: white solid; margin-top: 2%;">
+          <legend>Avaliação do Membro Inferior</legend>
+
+          <div class="labels">
+            <label for="dropdown">Anca</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Joelho</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="labels">
+            <label for="dropdown">Tibio-Társica/Pé</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="site">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <!--Field Escala Visual Analógica-->
+      <fieldset style="border: white solid;margin-top:100px">
+        <legend>Escala Visual Analógica (EVA) - DOR</legend>
+        <div class="input-tab" style="margin-top: 20px; width: 100%;margin-left: 0; text-align: center;">
+          <input type="image" src="img/EVA.jpg" style="width: 80%;">
+        </div>
+
+
+        <fieldset style="border: white solid;">
+          <legend>Avaliação do Membro Superior</legend>
+
+          <div class="labels">
+            <label for="dropdown">Ombro Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_ombro_esquerdo" value="5" name="range_ombro_esquerdo" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_ombro_esquerdo">5</span>
+          </div>
+          
+          <div class="labels">
+            <label for="dropdown">Ombro Direito</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_ombro_direito" value="5" name="range_ombro_direito" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_ombro_direito">5</span>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Cotovelo Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_cotovelo_esquerdo" value="5" name="range_cotovelo_esquerdo" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_cotovelo_esquerdo">5</span>
+          </div>
+
+
+          <div class="labels">
+            <label for="dropdown">Cotovelo Direito</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_cotovelo_direito" value="5" name="range_cotovelo_direito" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_cotovelo_direito">5</span>
+          </div>
+
+
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_punho_esquerdo" value="5" name="range_punho_esquerdo" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_punho_esquerdo">5</span>
+          </div>
+
+
+          <div class="labels">
+            <label for="dropdown">Punho/Dedos Direito</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_punho_direito" value="5" name="range_punho_direito" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_punho_direito">5</span>
+          </div>
+        </fieldset>
+
+        <fieldset style="border: white solid; margin-top: 2%;">
+          <legend>Avaliação do Membro Inferior</legend>
+          <div class="labels">
+            <label for="dropdown">Anca</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_anca" value="5" name="range_anca" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_anca">5</span>
+          </div>
+
+
+          <div class="labels">
+            <label for="dropdown">Joelho</label>
+          </div>
+          <div class="input-tab">
+            <input type="range" id="EVA_joelho" value="5" name="range_joelho" min="0" max="10" step="0.5">
+            <span style="margin-left: 10px;">Valor: </span><span id="output_range_joelho">5</span>
+          </div>
+
+
+          <div class="labels">
+            <label for="dropdown">Tibio-Társica/Pé</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name=".">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </fieldset>
+
+
+      </fieldset>
+      
+      <!--Field Marcha-->
+      <fieldset style="border: white solid;margin-top:100px">
+        <legend>10 metros de marcha</legend>
+
+        <div class="labels">
+          <label id="tempo-label" for="tempo">Tempo (s)</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="text" id="tempo" name="tempo" placeholder="Indique o tempo em segundos" autofocus>
+        </div>
+
+        <div class="labels">
+          <label id="passos-label" for="passos">Nº de passos</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="text" id="passos" name="passos" placeholder="Introduza o Nº passos">
+        </div>
+
+        <div class="labels">
+          <label id="velocidade-label" for="velocidade">Velocidade</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="text" id="velocidade" name="velocidade" placeholder="Introduza a velocidade">
+        </div>
+      </fieldset>
+      
+      <!--Field Vídeo-->
+      <fieldset style="border: white solid;margin-top:100px">
+        <legend>Vídeo</legend>
+
+        <div class="labels">
+          <div class="input-tab" style="text-align: center;">
+            <input type="radio" id="yes_video" name="video" value="yes" checked>
+            <label for="yes_video">Sim</label>
+          </div>
+        </div>
+
+        <div class="labels">
+          <div class="input-tab" style="text-align: center;">
+            <input type="radio" id="no_video" name="video" value="no">
+            <label for="no_video">Não</label>
+          </div>
+        </div>
+      </fieldset>
+    
+      
+
+
+      <div class="labels">
+        <label for="comments">Comentários ou observações</label>
+      </div>
+      <div class="input-tab">
+        <textarea class="input-field" id="comments" name="comments" rows="10" cols="40"
+          placeholder="Your comments..."></textarea>
+      </div>
+
+      <div class="btn">
+        <button id="submit" type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+  <footer>
+    <div class="contact">
+      <a href="https://gpemrodrigues.github.io/" target="_blank">
+        <span class="icon"><i class="fa-brands fa-github"></i></span></a>
+    </div>
+    <p>&copy 2022 Pedro Macedo Rodrigues</a></p>
+  </footer>
+</body>
+
+</html>
