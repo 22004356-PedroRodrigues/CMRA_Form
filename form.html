@@ -37,15 +37,15 @@
           <label id="name-label" for="name_paciente"><a style="color: white;">(Obrigatório)</a> Nome do paciente</label>
         </div>
         <div class="input-tab">
-          <input class="input-field" type="text" id="name_paciente" name="name_paciente" placeholder="Introduza o nome do paciente" required
-            autofocus>
+          <input class="input-field" type="text" id="name_paciente" name="name_paciente"
+            placeholder="Introduza o nome do paciente" required autofocus>
         </div>
         <div class="labels">
           <label id="number-label" for="processo"><a style="color: white;">(Obrigatório)</a> Nº Processo</label>
         </div>
         <div class="input-tab">
-          <input class="input-field" type="number" id="processo" name="processo" min="1" max="120" placeholder="xxxxxxxxx"
-            required>
+          <input class="input-field" type="number" id="processo" name="processo" min="1" max="120"
+            placeholder="xxxxxxxxx" required>
         </div>
         <div class="labels">
           <label for="dropdown">Sexo Biológico</label>
@@ -59,7 +59,7 @@
             <option value="3">Anónimo</option>
           </select>
         </div>
-        
+
         <div class="labels">
           <label for="dropdown">Diagnóstico</label>
         </div>
@@ -112,6 +112,34 @@
           </select>
         </div>
 
+        <div class="labels">
+          <label id="avcDate-label" for="avcDate"><a style="color: white;">(Obrigatório)</a> Data do Primeiro AVC
+          </label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="date" id="avcDate" name="avcDate" placeholder="01/01/2022" required>
+        </div>
+
+        <div class="labels">
+          <label for="dropdown">Toxina Botulínica</label>
+        </div>
+        <div class="input-tab">
+          <select id="dropdown" name="toxina_botulinica" required>
+            <option disabled value selected>Selecione uma opção</option>
+            <option value="0">Dysport</option>
+            <option value="1">Xeomin</option>
+            <option value="2">Botox</option>
+          </select>
+        </div>
+
+        <div class="labels">
+          <label id="number-label" for="toxina_dosagem"><a style="color: white;">(Obrigatório)</a> Dose</label>
+        </div>
+        <div class="input-tab">
+          <input class="input-field" type="number" id="toxina_dosagem" name="toxina_dosagem" min="1" max="120"
+            placeholder="xx" required>
+        </div>
+
       </fieldset>
 
       <!--Field Escala de Ashwoth Modificada-->
@@ -157,53 +185,20 @@
         <fieldset style="border: white solid;">
           <legend>Avaliação do Membro Superior</legend>
 
-
-          <table id='table' style="border-collapse: collapse;">
-            <tr>
-              <td style="border: 1px solid white; width:70%;">Ombro Esquerdo
-              </td>
-              <td style="border: 1px solid white;">
-                <div class="input-tab">
-                  <select id="dropdown" name="ombro_esquerdo">
-                    <option disabled value selected>Selecione uma opção</option>
-                    <option value="0">1</option>
-                    <option value="1">1+</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Tónus muscular normal</td>
-              <td style="border: 1px solid white; text-align: center;">1</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima no final do arco do
-                movimento</td>
-              <td style="border: 1px solid white; text-align: center;">1+</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Ligeiro aumento do tónus com resistência mínima em menos de 1/2 do
-                arco do movimento</td>
-              <td style="border: 1px solid white; text-align: center;">2</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Aumento do tónus em quase todo o arco do movimento; segmento
-                facilmente mobilizável</td>
-              <td style="border: 1px solid white; text-align: center;">3</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Aumento do tónus considerável; movimento passivo é difícil</td>
-              <td style="border: 1px solid white; text-align: center;">4</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid white;">Segmento afetado em flexão ou extensão</td>
-              <td style="border: 1px solid white; text-align: center;">5</td>
-            </tr>
-          </table>
+          <div class="labels">
+            <label for="dropdown">Ombro Esquerdo</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="ombro_esquerdo">
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="0">1</option>
+              <option value="1">1+</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
 
           <div class="labels">
             <label for="dropdown">Ombro Direito</label>
@@ -483,10 +478,11 @@
             <label for="dropdown">Ombro Esquerdo</label>
           </div>
           <div class="input-tab">
-            <input type="range" id="EVA_ombro_esquerdo" value="5" name="range_ombro_esquerdo" min="0" max="10" step="0.5">
+            <input type="range" id="EVA_ombro_esquerdo" value="5" name="range_ombro_esquerdo" min="0" max="10"
+              step="0.5">
             <span style="margin-left: 10px;">Valor: </span><span id="output_range_ombro_esquerdo">5</span>
           </div>
-          
+
           <div class="labels">
             <label for="dropdown">Ombro Direito</label>
           </div>
@@ -499,7 +495,8 @@
             <label for="dropdown">Cotovelo Esquerdo</label>
           </div>
           <div class="input-tab">
-            <input type="range" id="EVA_cotovelo_esquerdo" value="5" name="range_cotovelo_esquerdo" min="0" max="10" step="0.5">
+            <input type="range" id="EVA_cotovelo_esquerdo" value="5" name="range_cotovelo_esquerdo" min="0" max="10"
+              step="0.5">
             <span style="margin-left: 10px;">Valor: </span><span id="output_range_cotovelo_esquerdo">5</span>
           </div>
 
@@ -508,7 +505,8 @@
             <label for="dropdown">Cotovelo Direito</label>
           </div>
           <div class="input-tab">
-            <input type="range" id="EVA_cotovelo_direito" value="5" name="range_cotovelo_direito" min="0" max="10" step="0.5">
+            <input type="range" id="EVA_cotovelo_direito" value="5" name="range_cotovelo_direito" min="0" max="10"
+              step="0.5">
             <span style="margin-left: 10px;">Valor: </span><span id="output_range_cotovelo_direito">5</span>
           </div>
 
@@ -517,7 +515,8 @@
             <label for="dropdown">Punho/Dedos Esquerdo</label>
           </div>
           <div class="input-tab">
-            <input type="range" id="EVA_punho_esquerdo" value="5" name="range_punho_esquerdo" min="0" max="10" step="0.5">
+            <input type="range" id="EVA_punho_esquerdo" value="5" name="range_punho_esquerdo" min="0" max="10"
+              step="0.5">
             <span style="margin-left: 10px;">Valor: </span><span id="output_range_punho_esquerdo">5</span>
           </div>
 
@@ -569,7 +568,7 @@
 
 
       </fieldset>
-      
+
       <!--Field Marcha-->
       <fieldset style="border: white solid;margin-top:100px">
         <legend>10 metros de marcha</legend>
@@ -578,7 +577,8 @@
           <label id="tempo-label" for="tempo">Tempo (s)</label>
         </div>
         <div class="input-tab">
-          <input class="input-field" type="text" id="tempo" name="tempo" placeholder="Indique o tempo em segundos" autofocus>
+          <input class="input-field" type="text" id="tempo" name="tempo" placeholder="Indique o tempo em segundos"
+            autofocus>
         </div>
 
         <div class="labels">
@@ -595,7 +595,7 @@
           <input class="input-field" type="text" id="velocidade" name="velocidade" placeholder="Introduza a velocidade">
         </div>
       </fieldset>
-      
+
       <!--Field Vídeo-->
       <fieldset style="border: white solid;margin-top:100px">
         <legend>Vídeo</legend>
@@ -614,16 +614,664 @@
           </div>
         </div>
       </fieldset>
-    
-      
+
+      <!--Field FAC-->
+      <fieldset style="border: white solid;margin-top:100px">
+        <legend>FAC</legend>
+        <div class="labels">
+          <label for="dropdown">FAC</label>
+        </div>
+        <div class="input-tab">
+          <select id="dropdown" name="fac" required>
+            <option disabled value selected>Selecione uma opção</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!--Field Frequencia Espasmos-->
+      <fieldset style="border: white solid;margin-top:100px">
+        <legend>Escala de frequência de espasmos</legend>
+        <div class="labels">
+          <label for="dropdown">Escala de frequência de espasmos</label>
+        </div>
+        <div class="input-tab">
+          <select id="dropdown" name="freq_espasmos" required>
+            <option disabled value selected>Selecione uma opção</option>
+            <option value="1">1 (ausente)</option>
+            <option value="2">2 (Espasmos leves na estimulação)</option>
+            <option value="3">3 (Esp. infrequentes, -1/hora)</option>
+            <option value="4">4 (Espasmos +1/hora)</option>
+            <option value="5">5 (Espasmos +10x/hora)</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!--Field Amplitude-->
+      <fieldset style="border: white solid;margin-top: 100px">
+        <legend>Avaliação Amplitude articular passiva/ativa</legend>
+        <!--Amplitude articular passiva/ativa-->
+        <!--Superior-->
+        <fieldset style="border: white solid;margin-top:10px">
+          <legend>Avaliação do Membro Superior</legend>
+          <div class="input-tab" style="margin-top: 10px; width: 100%;margin-left: 0;">
+            <table id='table' style="border-collapse: collapse;">
+              <tr>
+                <th style="border: 1px solid white; width:100%; background-color: #a70432cc;">Descrição</th>
+                <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Amplitude
+                  articular passiva</th>
+                <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Amplitude
+                  articular ativa</th>
+              </tr>
+              <!--Ombro Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Ombro direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Ombro Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Ombro esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Cotovelo Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Cotovelo direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Cotovelo Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Cotovelo esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Punho Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Punho direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Punho Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Punho esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </fieldset>
+
+        <!--Inferior-->
+        <fieldset style="border: white solid;margin-top:10px">
+          <legend>Avaliação do Membro Inferior</legend>
+          <div class="input-tab" style="margin-top: 10px; width: 100%;margin-left: 0;">
+            <table id='table' style="border-collapse: collapse;">
+              <tr>
+                <th style="border: 1px solid white; width:100%; background-color: #a70432cc;">Descrição</th>
+                <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Amplitude
+                  articular passiva</th>
+                <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Amplitude
+                  articular ativa</th>
+              </tr>
+              <!--Anca lado Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Anca lado direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Anca lado Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Anca lado esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Joelho Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Joelho direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Joelho Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Joelho esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Pé Direito-->
+              <tr>
+                <td style="border: 1px solid white;">Tibio-Társica/Pé direito</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+              <!--Pé Esquerdo-->
+              <tr>
+                <td style="border: 1px solid white;">Tibio-Társica/Pé esquerdo</td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_passiva" style="width: auto;"">
+                  <option disabled value selected>Selecione uma opção</option>
+                  <option value=" 0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+                <td style="border: 1px solid white; text-align: center;">
+                  <select id="dropdown" name="ombro_direito_ativa" style="width: auto;">
+                    <option disabled value selected>Selecione uma opção</option>
+                    <option value="0">0%</option>
+                    <option value="1">25%</option>
+                    <option value="2">50%</option>
+                    <option value="3">75%</option>
+                    <option value="4">100%</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <!--Field Membro Superior-->
+      <fieldset style="border: white solid; margin-top: 100px;">
+        <legend>Membro Superior</legend>
+        <div class="input-tab" style="margin-top: 10px; width: 100%;margin-left: 0;">
+          <table id='table' style="border-collapse: collapse;">
+            <tr>
+              <th style="border: 1px solid white; width:100%; background-color: #a70432cc;">Descrição</th>
+              <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Direito</th>
+              <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Esquerdo</th>
+            </tr>
+            <!--Trapézio-->
+            <tr>
+              <td style="border: 1px solid white;">Trapézio</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="trapezio_direito"
+                  name="trapezio_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="trapezio_esquerdo"
+                  name="trapezio_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Rombóides-->
+            <tr>
+              <td style="border: 1px solid white;">Rombóides</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="romboides_direito"
+                  name="romboides_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="romboides_esquerdo"
+                  name="romboides_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Grande Peitoral-->
+            <tr>
+              <td style="border: 1px solid white;">Grande Peitoral</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_peitoral_direito"
+                  name="grande_peitoral_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_peitoral_esquerdo"
+                  name="grande_peitoral_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Grande dorsal-->
+            <tr>
+              <td style="border: 1px solid white;">Grande dorsal</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_dorsal_direito"
+                  name="grande_dorsal_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_dorsal_esquerdo"
+                  name="grande_dorsal_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Subescapular-->
+            <tr>
+              <td style="border: 1px solid white;">Subscapular</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_direito"
+                  name="subescapular_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_esquerdo"
+                  name="subescapular_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Grande redondo-->
+            <tr>
+              <td style="border: 1px solid white;">Grande redondo</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_redondo_direito"
+                  name="grande_redondo_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="grande_redondo_esquerdo"
+                  name="grande_redondo_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+              <!--Deltóide-->
+            <tr>
+              <td style="border: 1px solid white;">Deltóide</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="deltoide_direito"
+                  name="deltoide_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="deltoide_esquerdo"
+                  name="deltoide_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+              <!--Bicípete braquial-->
+            <tr>
+              <td style="border: 1px solid white;">Bicípete braquial</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_direito"
+                  name="subescapular_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_esquerdo"
+                  name="subescapular_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+              <!--Braquial anterior-->
+            <tr>
+              <td style="border: 1px solid white;">Braquial anterior</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number" id="braquial_anterior_direito"
+                  name="braquial_anterior_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="branquial_anterior_esquerdo" name="branquial_anterior_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+              <!--Tricípete braquial-->
+            <tr>
+              <td style="border: 1px solid white;">Tricípete braquial</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="tricipete_braquial_direito" name="tricipete_braquial_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="tricipete_braquial_esquerdo" name="tricipete_braquial_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Braquioradial TODO-->
+            <tr>
+              <td style="border: 1px solid white;">Branquioradial</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="branquioradial_direito" name="branquioradial_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="branquioradial_esquerdo" name="branquioradial_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Flexor radial do carpo-->
+            <tr>
+              <td style="border: 1px solid white;">Flexor radial do carpo</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_radial_carpo_direito" name="flexor_radial_carpo_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_radial_carpo_esquerdo" name="flexor_radial_carpo_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Flexor cubital do carpo-->
+            <tr>
+              <td style="border: 1px solid white;">Flexor cubital do carpo</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_cubital_carpo_direito" name="flexor_cubital_carpo_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_cubital_carpo_esquerdo" name="flexor_cubital_carpo_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Flexor superficial dos dedos-->
+            <tr>
+              <td style="border: 1px solid white;">Flexor superficial dos dedos</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_superficial_dedos_direito" name="flexor_superficial_dedos_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_superficial_dedos_esquerdo" name="flexor_superficial_dedos_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Flexor profundo dos dedos-->
+            <tr>
+              <td style="border: 1px solid white;">Flexor profundo dos dedos</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_profundo_dedos_direito" name="flexor_profundo_dedos_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_profundo_dedos_esquerdo" name="flexor_profundo_dedos_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Longo flexor do polegar-->
+            <tr>
+              <td style="border: 1px solid white;">Longo flexor do polegar</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="longo_flexor_polegar_direito" name="longo_flexor_polegar_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="longo_flexor_polegar_esquerdo" name="longo_flexor_polegar_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Redondo pronador-->
+            <tr>
+              <td style="border: 1px solid white;">Redondo pronador</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="redondo_pronador_direito" name="redondo_pronador_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="redondo_pronador_esquerdo" name="redondo_pronador_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Quadrado pronador-->
+            <tr>
+              <td style="border: 1px solid white;">Quadrado pronador</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="quadrado_pronador_direito" name="quadrado_pronador_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="quadrado_pronador_esquerdo" name="quadrado_pronador_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Supinador-->
+            <tr>
+              <td style="border: 1px solid white;">Supinador</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="supinador_direito" name="supinador_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="supinador_direito" name="supinador_direito" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Adutor do polegar-->
+            <tr>
+              <td style="border: 1px solid white;">Adutor do polegar</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="adutor_polegar_direito" name="adutor_polegar_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="adutor_polegar_esquerdo" name="adutor_polegar_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Flexor superficial dos dedos-->
+            <tr>
+              <td style="border: 1px solid white;">Flexor superficial dos dedos</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_superficial_dedos_direito" name="flexor_superficial_dedos_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="flexor_superficial_dedos_esquerdo" name="flexor_superficial_dedos_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Interosseos dorsais-->
+            <tr>
+              <td style="border: 1px solid white;">Interosseos dorsais</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="interosseos_dorsais_direito" name="interosseos_dorsais_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="interosseos_dorsais_esquerdo" name="interosseos_dorsais_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+            <!--Lumbricoides-->
+            <tr>
+              <td style="border: 1px solid white;">Lumbricoides</td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="lumbricoides_direito" name="lumbricoides_direito" placeholder="" value="0" autofocus>
+              </td>
+              <td style="border: 1px solid white; text-align: center;">
+                <input class="input-field" style="width: auto; margin: auto;" type="number"
+                  id="lumbricoides_esquerdo" name="lumbricoides_esquerdo" placeholder="" value="0" autofocus>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
 
 
-      <div class="labels">
-        <label for="comments">Comentários ou observações</label>
-      </div>
-      <div class="input-tab">
-        <textarea class="input-field" id="comments" name="comments" rows="10" cols="40"
-          placeholder="Your comments..."></textarea>
+      <!--Zona de comentários-->
+      <div style="margin-top:50px">
+        <div class="labels">
+          <label for="comments">Comentários ou observações</label>
+        </div>
+        <div class="input-tab">
+          <textarea class="input-field" id="comments" name="comments" rows="10" cols="40"
+            placeholder="Your comments..."></textarea>
+        </div>
       </div>
 
       <div class="btn">
