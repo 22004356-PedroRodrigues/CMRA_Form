@@ -2,14 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="scripts.js" defer></script>
+  <link rel="stylesheet" href="content/cdnjs.cloudflare.com_ajax_libs_font-awesome_6.2.0_css_all.min.css"/>
+  <link rel="stylesheet" href="content/style.css">
+  <script src="content/cdnjs.cloudflare.com_ajax_libs_jquery_3.7.0_jquery.min.js"></script>
+  <script src="content/scripts.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +21,14 @@
     <form id="survey-form" method="post" action="form_save.php">
 
       <div class="labels">
-        <label id="name-label" for="name"><a style="color: white;">(Obrigatório)</a> Nome do Profissional</label>
+        <label id="aplicationDate-label" for="aplicationDate"><a style="color: white;">Data de Aplicação</label>
+      </div>
+      <div class="input-tab">
+        <input value="" class="input-field" type="date" id="aplicationDate" name="aplicationDate" required readonly>
+      </div>
+
+      <div class="labels">
+        <label id="name-label" for="name"> Nome do Profissional</label>
       </div>
       <div class="input-tab">
         <input class="input-field" type="text" id="name" name="name" placeholder="Introduza o seu nome" required
@@ -37,7 +40,7 @@
         <legend>Campos de identificação</legend>
 
         <div class="labels">
-          <label id="number-label" for="processo"><a style="color: white;">(Obrigatório)</a> Nº Processo</label>
+          <label id="number-label" for="processo"> Nº Processo</label>
         </div>
         <div class="input-tab">
           <input class="input-field" type="number" id="processo" name="processo" min="0" max="999999"
@@ -47,7 +50,7 @@
 
 
         <div class="labels">
-          <label id="name-label" for="name_paciente"><a style="color: white;">(Obrigatório)</a> Nome do paciente</label>
+          <label id="name-label" for="name_paciente"> Nome do paciente</label>
         </div>
         <div class="input-tab">
           <input class="input-field" type="text" id="name_paciente" name="name_paciente"
@@ -56,7 +59,7 @@
 
 
         <div class="labels">
-          <label id="nascDate-label" for="nascDate"><a style="color: white;">(Obrigatório)</a> Data de Nascimento
+          <label id="nascDate-label" for="nascDate"> Data de Nascimento
           </label>
         </div>
         <div class="input-tab">
@@ -96,7 +99,8 @@
             </optgroup>
             <optgroup label="Lesão Encefálica">
               <option value="Lesão Encefálica (n traum) Anóxia">Lesão Encefálica (n traum) Anóxia</option>
-              <option value="Lesão Encefálica (n traum) AVC Hemorrágico">Lesão Encefálica (n traum) AVC Hemorrágico</option>
+              <option value="Lesão Encefálica (n traum) AVC Hemorrágico">Lesão Encefálica (n traum) AVC Hemorrágico
+              </option>
               <option value="Lesão Encefálica (n traum) AVC Isquémico">Lesão Encefálica (n traum) AVC Isquémico</option>
               <option value="Lesão Encefálica (n traum) Infecciosa">Lesão Encefálica (n traum) Infecciosa</option>
               <option value="Lesão Encefálica (n traum) Inflamatória">Lesão Encefálica (n traum) Inflamatória</option>
@@ -161,7 +165,7 @@
         </div>
 
         <div class="labels">
-          <label id="avcDate-label" for="avcDate"><a style="color: white;">(Obrigatório)</a> Data do Primeiro AVC
+          <label id="avcDate-label" for="avcDate"> Data do Primeiro AVC
           </label>
         </div>
         <div class="input-tab">
@@ -826,7 +830,7 @@
               <option value="10">10</option>
             </select>
           </div>
-          
+
           <div class="labels">
             <label for="dropdown">Joelho esquerdo</label>
           </div>
@@ -910,49 +914,51 @@
       <!--Field Clinical/Functional evaluation-->
       <fieldset style="border: white solid;margin-top:100px">
         <legend>Avaliação Clinica/Funcional</legend>
+        <fieldset style="border: white solid;">
+          <legend>10m Marcha</legend>
+          <div class="labels">
+            <label id="tempo-label" for="tempo">Tempo (s)</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="tempo" name="tempo" placeholder="Indique o tempo em segundos"
+              autofocus>
+          </div>
 
-        <div class="labels">
-          <label id="tempo-label" for="tempo">Tempo (s)</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="tempo" name="tempo" placeholder="Indique o tempo em segundos"
-            autofocus>
-        </div>
+          <div class="labels">
+            <label id="passos-label" for="passos">Nº de passos</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="passos" name="passos" placeholder="Introduza o Nº passos">
+          </div>
 
-        <div class="labels">
-          <label id="passos-label" for="passos">Nº de passos</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="passos" name="passos" placeholder="Introduza o Nº passos">
-        </div>
+          <div class="labels">
+            <label id="velocidade-label" for="velocidade">Velocidade</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="velocidade" name="velocidade" value="0" readonly>
+          </div>
 
-        <div class="labels">
-          <label id="velocidade-label" for="velocidade">Velocidade</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="velocidade" name="velocidade" value="0" readonly>
-        </div>
+          <div class="labels">
+            <label id="velocidade-label" for="cadencia">Cadência (passos p/ minuto)</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="cadencia" name="cadencia" value="0" readonly>
+          </div>
 
-        <div class="labels">
-          <label id="velocidade-label" for="cadencia">Cadência (passos p/ minuto)</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="cadencia" name="cadencia" value="0" readonly>
-        </div>
+          <div class="labels">
+            <label id="passada-label" for="passada">Tamanho da passada</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="passada" name="passada" value="0" readonly>
+          </div>
 
-        <div class="labels">
-          <label id="passada-label" for="passada">Tamanho da passada</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="passada" name="passada" value="0" readonly>
-        </div>
-
-        <div class="labels">
-          <label id="reacao-label" for="reacao">Reações associadas (ARRS)</label>
-        </div>
-        <div class="input-tab">
-          <input class="input-field" type="text" id="reacao" name="reacao" value="0">
-        </div>
+          <div class="labels">
+            <label id="reacao-label" for="reacao">Reações associadas (ARRS)</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="reacao" name="reacao" value="0">
+          </div>
+        </fieldset>
 
         <div class="labels">
           <label for="dropdown">FAC</label>
@@ -1252,7 +1258,7 @@
         </div>
 
         <div class="labels">
-          <label id="number-label" for="toxina_dosagem"><a style="color: white;">(Obrigatório)</a> Dose</label>
+          <label id="number-label" for="toxina_dosagem"> Dose</label>
         </div>
         <div class="input-tab">
           <input class="input-field" type="number" id="toxina_dosagem" name="toxina_dosagem" min="1" max="999"
@@ -1407,11 +1413,11 @@
                 <td style="border: 1px solid white;">Adutor do polegar</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="adutor_polegar_direito" name="adutor_polegar_direito" placeholder="" value="0" autofocus>
+                    id="adutor_polegar_direito" name="adutor_polegar_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="adutor_polegar_esquerdo" name="adutor_polegar_esquerdo" placeholder="" value="0" autofocus>
+                    id="adutor_polegar_esquerdo" name="adutor_polegar_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Bíceps braquial-->
@@ -1419,11 +1425,11 @@
                 <td style="border: 1px solid white;">Bíceps braquial</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="biceps_braquial_direito" name="biceps_braquial_direito" placeholder="" value="0" autofocus>
+                    id="biceps_braquial_direito" name="biceps_braquial_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="biceps_braquial_esquerdo" name="biceps_braquial_esquerdo" placeholder="" value="0" autofocus>
+                    id="biceps_braquial_esquerdo" name="biceps_braquial_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Braquirradial-->
@@ -1431,11 +1437,11 @@
                 <td style="border: 1px solid white;">Braquirradial</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="braquirradial_direito"
-                    name="braquirradial_direito" placeholder="" value="0" autofocus>
+                    name="braquirradial_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="braquirradial_esquerdo" name="braquirradial_esquerdo" placeholder="" value="0" autofocus>
+                    id="braquirradial_esquerdo" name="braquirradial_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Braquial-->
@@ -1443,11 +1449,11 @@
                 <td style="border: 1px solid white;">Braquial</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="braquial_direito"
-                    name="braquial_direito" placeholder="" value="0" autofocus>
+                    name="braquial_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="braquial_esquerdo"
-                    name="braquial_esquerdo" placeholder="" value="0" autofocus>
+                    name="braquial_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Coracobraquial-->
@@ -1455,11 +1461,11 @@
                 <td style="border: 1px solid white;">Coracobraquial</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="coracobraquial_direito" name="coracobraquial_direito" placeholder="" value="0" autofocus>
+                    id="coracobraquial_direito" name="coracobraquial_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="coracobraquial_esquerdo" name="coracobraquial_esquerdo" placeholder="" value="0" autofocus>
+                    id="coracobraquial_esquerdo" name="coracobraquial_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Deltoides-->
@@ -1467,45 +1473,45 @@
                 <td style="border: 1px solid white;">Deltoides</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="deltoides_direito"
-                    name="deltoides_direito" placeholder="" value="0" autofocus>
+                    name="deltoides_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="deltoides_esquerdo"
-                    name="deltoides_esquerdo" placeholder="" value="0" autofocus>
+                    name="deltoides_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
                 <!--Elevador da escápula-->
               <tr>
                 <td style="border: 1px solid white;">Elevador da escápula</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="elevador_escapula_direito" name="elevador_escapula_direito" placeholder="" value="0" autofocus>
+                    id="elevador_escapula_direito" name="elevador_escapula_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="elevador_escapula_esquerdo" name="elevador_escapula_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <!--Extensor do carpo-->
               <tr>
                 <td style="border: 1px solid white;">Extensor do carpo</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_carpo_direito" name="extensor_carpo_direito" placeholder="" value="0" autofocus>
+                    id="extensor_carpo_direito" name="extensor_carpo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_carpo_esquerdo" name="extensor_carpo_esquerdo" placeholder="" value="0" autofocus>
+                    id="extensor_carpo_esquerdo" name="extensor_carpo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
                 <!--Extensor dos dedos-->
               <tr>
                 <td style="border: 1px solid white;">Extensor dos dedos</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_dedos_direito" name="extensor_dedos_direito" placeholder="" value="0" autofocus>
+                    id="extensor_dedos_direito" name="extensor_dedos_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_dedos_esquerdo" name="extensor_dedos_esquerdo" placeholder="" value="0" autofocus>
+                    id="extensor_dedos_esquerdo" name="extensor_dedos_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
                 <!--Flexor curto do polegar-->
               <tr>
@@ -1513,12 +1519,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_curto_polegar_direito" name="flexor_curto_polegar_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_curto_polegar_esquerdo" name="flexor_curto_polegar_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Flexor longo do polegar-->
@@ -1527,12 +1533,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_polegar_direito" name="flexor_longo_polegar_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_polegar_esquerdo" name="flexor_longo_polegar_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Flexor longo dos dedos-->
@@ -1541,12 +1547,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_dedos_direito" name="flexor_longo_dedos_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_dedos_esquerdo" name="flexor_longo_dedos_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Flexor radial do carpo-->
@@ -1555,12 +1561,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_radial_carpo_direito" name="flexor_radial_carpo_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_radial_carpo_esquerdo" name="flexor_radial_carpo_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Flexor superficial dos dedos-->
@@ -1569,12 +1575,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_superficial_dedos_direito" name="flexor_superficial_dedos_direito" placeholder=""
-                    value="0" autofocus>
+                    value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_superficial_dedos_esquerdo" name="flexor_superficial_dedos_esquerdo" placeholder=""
-                    value="0" autofocus>
+                    value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Infraspinhoso-->
@@ -1582,11 +1588,11 @@
                 <td style="border: 1px solid white;">Infraspinhoso</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="infraspinhoso_direito"
-                    name="infraspinhoso_direito" placeholder="" value="0" autofocus>
+                    name="infraspinhoso_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="infraspinhoso_esquerdo" name="infraspinhoso_esquerdo" placeholder="" value="0" autofocus>
+                    id="infraspinhoso_esquerdo" name="infraspinhoso_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Interósseos dorsais-->
@@ -1595,12 +1601,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="interosseos_dorsais_direito" name="interosseos_dorsais_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="interosseos_dorsais_esquerdo" name="interosseos_dorsais_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Latíssimo do dorso-->
@@ -1608,11 +1614,11 @@
                 <td style="border: 1px solid white;">Latíssimo do dorso</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="latissimo_dorso_direito" name="latissimo_dorso_direito" placeholder="" value="0" autofocus>
+                    id="latissimo_dorso_direito" name="latissimo_dorso_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="latissimo_dorso_esquerdo" name="latissimo_dorso_esquerdo" placeholder="" value="0" autofocus>
+                    id="latissimo_dorso_esquerdo" name="latissimo_dorso_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Lombricoides-->
@@ -1620,11 +1626,11 @@
                 <td style="border: 1px solid white;">Lombricoides</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="lombricoides_direito"
-                    name="lombricoides_direito" placeholder="" value="0" autofocus>
+                    name="lombricoides_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="lombricoides_esquerdo"
-                    name="lombricoides_esquerdo" placeholder="" value="0" autofocus>
+                    name="lombricoides_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Oponente do polegar-->
@@ -1632,11 +1638,11 @@
                 <td style="border: 1px solid white;">Oponente do polegar</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="oponente_polegar_direito" name="oponente_polegar_direito" placeholder="" value="0" autofocus>
+                    id="oponente_polegar_direito" name="oponente_polegar_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="oponente_polegar_esquerdo" name="oponente_polegar_esquerdo" placeholder="" value="0" autofocus>
+                    id="oponente_polegar_esquerdo" name="oponente_polegar_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Peitoral maior-->
@@ -1644,11 +1650,11 @@
                 <td style="border: 1px solid white;">Peitoral maior</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id=peitoral_maior_direito"
-                    name="peitoral_maior_direito" placeholder="" value="0" autofocus>
+                    name="peitoral_maior_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="peitoral_maior_esquerdo" name="peitoral_maior_esquerdo" placeholder="" value="0" autofocus>
+                    id="peitoral_maior_esquerdo" name="peitoral_maior_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Pronador quadrado-->
@@ -1656,12 +1662,12 @@
                 <td style="border: 1px solid white;">Pronador quadrado</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="pronador_quadrado_direito" name="pronador_quadrado_direito" placeholder="" value="0" autofocus>
+                    id="pronador_quadrado_direito" name="pronador_quadrado_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="pronador_quadrado_esquerdo" name="pronador_quadrado_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Pronador teres-->
@@ -1669,11 +1675,11 @@
                 <td style="border: 1px solid white;">Pronador teres</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="pronador_teres_direito" name="pronador_teres_direito" placeholder="" value="0" autofocus>
+                    id="pronador_teres_direito" name="pronador_teres_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="pronador_teres_esquerdo" name="pronador_teres_esquerdo" placeholder="" value="0" autofocus>
+                    id="pronador_teres_esquerdo" name="pronador_teres_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Romboides-->
@@ -1681,11 +1687,11 @@
                 <td style="border: 1px solid white;">Romboides</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="romboides_direito"
-                    name="romboides_direito" placeholder="" value="0" autofocus>
+                    name="romboides_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="romboides_esquerdo"
-                    name="romboides_esquerdo" placeholder="" value="0" autofocus>
+                    name="romboides_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Subescapular-->
@@ -1693,11 +1699,11 @@
                 <td style="border: 1px solid white;">Subescapular</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_direito"
-                    name="subescapular_direito" placeholder="" value="0" autofocus>
+                    name="subescapular_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="subescapular_esquerdo"
-                    name="subescapular_esquerdo" placeholder="" value="0" autofocus>
+                    name="subescapular_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Supinador-->
@@ -1705,11 +1711,11 @@
                 <td style="border: 1px solid white;">Supinador</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="supinador_direito"
-                    name="supinador_direito" placeholder="" value="0" autofocus>
+                    name="supinador_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="supinador_esquerdo"
-                    name="supinador_esquerdo" placeholder="" value="0" autofocus>
+                    name="supinador_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Supraespinhoso-->
@@ -1717,11 +1723,11 @@
                 <td style="border: 1px solid white;">Supraespinhoso</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="supraespinhoso_direito" name="supraespinhoso_direito" placeholder="" value="0" autofocus>
+                    id="supraespinhoso_direito" name="supraespinhoso_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="supraespinhoso_esquerdo" name="supraespinhoso_esquerdo" placeholder="" value="0" autofocus>
+                    id="supraespinhoso_esquerdo" name="supraespinhoso_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Teres maior-->
@@ -1729,11 +1735,11 @@
                 <td style="border: 1px solid white;">Teres maior</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="teres_maior_direito"
-                    name="teres_maior_direito" placeholder="" value="0" autofocus>
+                    name="teres_maior_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="teres_maior_esquerdo"
-                    name="teres_maior_esquerdo" placeholder="" value="0" autofocus>
+                    name="teres_maior_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Trapézio-->
@@ -1741,11 +1747,11 @@
                 <td style="border: 1px solid white;">Trapézio</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="trapezio_direito"
-                    name="trapezio_direito" placeholder="" value="0" autofocus>
+                    name="trapezio_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="trapezio_esquerdo"
-                    name="trapezio_esquerdo" placeholder="" value="0" autofocus>
+                    name="trapezio_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Tríceps braquial-->
@@ -1753,11 +1759,11 @@
                 <td style="border: 1px solid white;">Tríceps braquial</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="triceps_braquial_direito" name="triceps_braquial_direito" placeholder="" value="0" autofocus>
+                    id="triceps_braquial_direito" name="triceps_braquial_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="triceps_braquial_esquerdo" name="triceps_braquial_esquerdo" placeholder="" value="0" autofocus>
+                    id="triceps_braquial_esquerdo" name="triceps_braquial_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <tr>
@@ -1766,12 +1772,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto; text-align: center;" type="number"
                     id="superior_total_direito" name="superior_total_direito" placeholder="" value="0" autofocus
-                    readonly>
+                    readonly min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto; text-align: center;" type="number"
                     id="superior_total_esquerdo" name="superior_total_esquerdo" placeholder="" value="0" autofocus
-                    readonly>
+                    readonly min="0">
                 </td>
               </tr>
             </table>
@@ -1794,11 +1800,11 @@
                 <td style="border: 1px solid white;">Adutor Magnum</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="adutor_magnum_direito"
-                    name="adutor_magnum_direito" placeholder="" value="0" autofocus>
+                    name="adutor_magnum_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="adutor_magnum_esquerdo" name="adutor_magnum_esquerdo" placeholder="" value="0" autofocus>
+                    id="adutor_magnum_esquerdo" name="adutor_magnum_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Adutor Longo-->
@@ -1806,11 +1812,11 @@
                 <td style="border: 1px solid white;">Adutor Longo</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="adutor_longo_direito"
-                    name="adutor_longo_direito" placeholder="" value="0" autofocus>
+                    name="adutor_longo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="adutor_longo_esquerdo"
-                    name="adutor_longo_esquerdo" placeholder="" value="0" autofocus>
+                    name="adutor_longo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Adutor Breve-->
@@ -1818,11 +1824,11 @@
                 <td style="border: 1px solid white;">Adutor Breve</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="adutor_breve_direito"
-                    name="adutor_breve_direito" placeholder="" value="0" autofocus>
+                    name="adutor_breve_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="adutor_breve_esquerdo"
-                    name="adutor_breve_esquerdo" placeholder="" value="0" autofocus>
+                    name="adutor_breve_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Bíceps crural-->
@@ -1830,11 +1836,11 @@
                 <td style="border: 1px solid white;">Bíceps crural</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="biceps_crural_direito"
-                    name="biceps_crural_direito" placeholder="" value="0" autofocus>
+                    name="biceps_crural_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="biceps_crural_esquerdo" name="biceps_crural_esquerdo" placeholder="" value="0" autofocus>
+                    id="biceps_crural_esquerdo" name="biceps_crural_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Extensor curto dos dedos-->
@@ -1842,11 +1848,11 @@
                 <td style="border: 1px solid white;">Extensor curto dos dedos</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_curto_direito" name="extensor_curto_direito" placeholder="" value="0" autofocus>
+                    id="extensor_curto_direito" name="extensor_curto_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_curto_esquerdo" name="extensor_curto_esquerdo" placeholder="" value="0" autofocus>
+                    id="extensor_curto_esquerdo" name="extensor_curto_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Extensor longo do hálux-->
@@ -1855,12 +1861,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="extensor_longo_halux_direito" name="extensor_longo_halux_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="extensor_longo_halux_esquerdo" name="extensor_longo_halux_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Extensor longo dos dedos-->
@@ -1868,11 +1874,11 @@
                 <td style="border: 1px solid white;">Extensor longo dos dedos</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_longo_direito" name="extensor_longo_direito" placeholder="" value="0" autofocus>
+                    id="extensor_longo_direito" name="extensor_longo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="extensor_longo_esquerdo" name="extensor_longo_esquerdo" placeholder="" value="0" autofocus>
+                    id="extensor_longo_esquerdo" name="extensor_longo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Fibular curto-->
@@ -1880,11 +1886,11 @@
                 <td style="border: 1px solid white;">Fibular curto</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="fibular_curto_direito"
-                    name="fibular_curto_direito" placeholder="" value="0" autofocus>
+                    name="fibular_curto_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="fibular_curto_esquerdo" name="fibular_curto_esquerdo" placeholder="" value="0" autofocus>
+                    id="fibular_curto_esquerdo" name="fibular_curto_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Fibular longo-->
@@ -1892,11 +1898,11 @@
                 <td style="border: 1px solid white;">Fibular longo</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="fibular_longo_direito"
-                    name="fibular_longo_direito" placeholder="" value="0" autofocus>
+                    name="fibular_longo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="fibular_longo_esquerdo" name="fibular_longo_esquerdo" placeholder="" value="0" autofocus>
+                    id="fibular_longo_esquerdo" name="fibular_longo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
                 <!--Flexor curto do hálux-->
               <tr>
@@ -1904,23 +1910,23 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_curto_halux_direito" name="flexor_curto_halux_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_curto_halux_esquerdo" name="flexor_curto_halux_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <!--Flexor curto dos dedos-->
               <tr>
                 <td style="border: 1px solid white;">Flexor curto dos dedos</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="flexor_curto_direito"
-                    name="flexor_curto_direito" placeholder="" value="0" autofocus>
+                    name="flexor_curto_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="flexor_curto_esquerdo"
-                    name="flexor_curto_esquerdo" placeholder="" value="0" autofocus>
+                    name="flexor_curto_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
                 <!--Flexor longo do hálux-->
               <tr>
@@ -1928,23 +1934,23 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_halux_direito" name="flexor_longo_halux_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="flexor_longo_halux_esquerdo" name="flexor_longo_halux_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <!--Flexor longo dos dedos-->
               <tr>
                 <td style="border: 1px solid white;">Flexor longo dos dedos</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="flexor_longo_direito"
-                    name="flexor_longo_direito" placeholder="" value="0" autofocus>
+                    name="flexor_longo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="flexor_longo_esquerdo"
-                    name="flexor_longo_esquerdo" placeholder="" value="0" autofocus>
+                    name="flexor_longo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Gastrocnêmio lateral-->
@@ -1953,12 +1959,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="gastrocnemio_lateral_direito" name="gastrocnemio_lateral_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="gastrocnemio_lateral_esquerdo" name="gastrocnemio_lateral_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Gastrocnêmio medial-->
@@ -1967,12 +1973,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="gastrocnemio_medial_direito" name="gastrocnemio_medial_direito" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
                     id="gastrocnemio_medial_esquerdo" name="gastrocnemio_medial_esquerdo" placeholder="" value="0"
-                    autofocus>
+                    autofocus min="0">
                 </td>
               </tr>
               <!--Psoas ilíaco-->
@@ -1980,11 +1986,11 @@
                 <td style="border: 1px solid white;">Psoas ilíaco</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="psoas_iliaco_direito"
-                    name="psoas_iliaco_direito" placeholder="" value="0" autofocus>
+                    name="psoas_iliaco_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="psoas_iliaco_esquerdo"
-                    name="psoas_iliaco_esquerdo" placeholder="" value="0" autofocus>
+                    name="psoas_iliaco_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Reto femoral-->
@@ -1992,11 +1998,11 @@
                 <td style="border: 1px solid white;">Reto femoral</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="reto_femoral_direito"
-                    name="reto_femoral_direito" placeholder="" value="0" autofocus>
+                    name="reto_femoral_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="reto_femoral_esquerdo"
-                    name="reto_femoral_esquerdo" placeholder="" value="0" autofocus>
+                    name="reto_femoral_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Semimembranoso-->
@@ -2004,11 +2010,11 @@
                 <td style="border: 1px solid white;">Semimembranoso</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="semimembranoso_direito" name="semimembranoso_direito" placeholder="" value="0" autofocus>
+                    id="semimembranoso_direito" name="semimembranoso_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="semimembranoso_esquerdo" name="semimembranoso_esquerdo" placeholder="" value="0" autofocus>
+                    id="semimembranoso_esquerdo" name="semimembranoso_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Semitendinoso-->
@@ -2016,11 +2022,11 @@
                 <td style="border: 1px solid white;">Semitendinoso</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="semitendinoso_direito"
-                    name="semitendinoso_direito" placeholder="" value="0" autofocus>
+                    name="semitendinoso_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="semitendinoso_esquerdo" name="semitendinoso_esquerdo" placeholder="" value="0" autofocus>
+                    id="semitendinoso_esquerdo" name="semitendinoso_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Sóleo-->
@@ -2028,11 +2034,11 @@
                 <td style="border: 1px solid white;">Sóleo</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="soleo_direito"
-                    name="soleo_direito" placeholder="" value="0" autofocus>
+                    name="soleo_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="soleo_esquerdo"
-                    name="soleo_esquerdo" placeholder="" value="0" autofocus>
+                    name="soleo_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Tibial anterior-->
@@ -2040,11 +2046,11 @@
                 <td style="border: 1px solid white;">Tibial anterior</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="tibial_anterior_direito" name="tibial_anterior_direito" placeholder="" value="0" autofocus>
+                    id="tibial_anterior_direito" name="tibial_anterior_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="tibial_anterior_esquerdo" name="tibial_anterior_esquerdo" placeholder="" value="0" autofocus>
+                    id="tibial_anterior_esquerdo" name="tibial_anterior_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Tibial posterior-->
@@ -2052,11 +2058,11 @@
                 <td style="border: 1px solid white;">Tibial posterior</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id=tibial_posterior_direito" name="tibial_posterior_direito" placeholder="" value="0" autofocus>
+                    id=tibial_posterior_direito" name="tibial_posterior_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="tibial_posterior_esquerdo" name="tibial_posterior_esquerdo" placeholder="" value="0" autofocus>
+                    id="tibial_posterior_esquerdo" name="tibial_posterior_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Vasto interno-->
@@ -2064,11 +2070,11 @@
                 <td style="border: 1px solid white;">Vasto interno</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="vasto_interno_direito"
-                    name="vasto_interno_direito" placeholder="" value="0" autofocus>
+                    name="vasto_interno_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="vasto_interno_esquerdo" name="vasto_interno_esquerdo" placeholder="" value="0" autofocus>
+                    id="vasto_interno_esquerdo" name="vasto_interno_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Vasto lateral-->
@@ -2076,11 +2082,11 @@
                 <td style="border: 1px solid white;">Vasto lateral</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="vasto_lateral_direito"
-                    name="vasto_lateral_direito" placeholder="" value="0" autofocus>
+                    name="vasto_lateral_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number"
-                    id="vasto_lateral_esquerdo" name="vasto_lateral_esquerdo" placeholder="" value="0" autofocus>
+                    id="vasto_lateral_esquerdo" name="vasto_lateral_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <tr>
@@ -2089,12 +2095,12 @@
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto; text-align: center;" type="number"
                     id="inferior_total_direito" name="inferior_total_direito" placeholder="" value="0" autofocus
-                    readonly>
+                    readonly min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto; text-align: center;" type="number"
                     id="inferior_total_esquerdo" name="inferior_total_esquerdo" placeholder="" value="0" autofocus
-                    readonly>
+                    readonly min="0">
                 </td>
               </tr>
             </table>
@@ -2104,7 +2110,7 @@
         <fieldset style="border: white solid; margin-top: 20px;">
           <legend>Outros</legend>
           <div class="input-tab" style="margin-top: 10px; width: 100%;margin-left: 0;">
-            <table id='table' name="membro_inferior_table" style="border-collapse: collapse;">
+            <table id='table' name="outros_table" style="border-collapse: collapse;">
               <tr>
                 <th style="border: 1px solid white; width:100%; background-color: #a70432cc;">Descrição</th>
                 <th style="border: 1px solid white; text-align: center ;background-color: #a70432cc;">Direito</th>
@@ -2115,11 +2121,11 @@
                 <td style="border: 1px solid white;">Cara</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="cara_direito"
-                    name="cara_direito" placeholder="" value="0" autofocus>
+                    name="cara_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="cara_esquerdo"
-                    name="cara_esquerdo" placeholder="" value="0" autofocus>
+                    name="cara_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
               <!--Outros-->
@@ -2127,11 +2133,11 @@
                 <td style="border: 1px solid white;">Outros</td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="outros_direito"
-                    name="outros_direito" placeholder="" value="0" autofocus>
+                    name="outros_direito" placeholder="" value="0" autofocus min="0">
                 </td>
                 <td style="border: 1px solid white; text-align: center;">
                   <input class="input-field" style="width: auto; margin: auto;" type="number" id="outros_esquerdo"
-                    name="outros_esquerdo" placeholder="" value="0" autofocus>
+                    name="outros_esquerdo" placeholder="" value="0" autofocus min="0">
                 </td>
               </tr>
             </table>
@@ -2163,8 +2169,7 @@
               <option disabled value selected>Selecione uma opção</option>
               <option value="D1-Dor/Desconforto">D1-Dor/Desconforto</option>
               <option value="D1-Movimentos involuntários">D1-Movimentos involuntários</option>
-              <option value="D1-Amplitude de movimento/prevenção contracturas">D1-Amplitude de movimento/prevenção
-                contracturas</option>
+              <option value="D1-Amplitude de movimento/prevenção contracturas">D1-Amplitude de movimento/prevenção contracturas</option>
               <option value="D2-Funções passivas/cuidados">D2-Funções passivas/cuidados</option>
               <option value="D2-Funções activas/actividade motora">D2-Funções activas/actividade motora</option>
               <option value="D2-Mobilidade(transf/vert/marcha)">D2-Mobilidade(transf/vert/marcha)</option>
@@ -2210,12 +2215,12 @@
 
         <!--Field Secondary Goal-->
         <fieldset style="border: white solid; margin-top: 20px;">
-          <legend>Objetivo Secundário</legend>
+          <legend>Objetivo Secundário 1</legend>
           <div class="labels">
             <label for="dropdown">Categoria Secundária</label>
           </div>
           <div class="input-tab">
-            <select id="dropdown" name="objetivo_principal_categoria_sec" required>
+            <select id="dropdown" name="objetivo_principal_categoria_sec_1" required>
               <option disabled value selected>Selecione uma opção</option>
               <option value="D1-Sintomas/Défices">D1-Sintomas/Défices</option>
               <option value="D2-Actividades/Função">D2-Actividades/Função</option>
@@ -2226,7 +2231,7 @@
             <label for="dropdown">Subcategoria</label>
           </div>
           <div class="input-tab">
-            <select id="dropdown" name="objetivo_principal_subcategoria_sec" required>
+            <select id="dropdown" name="objetivo_principal_subcategoria_sec_1" required>
               <option disabled value selected>Selecione uma opção</option>
               <option value="D1-Dor/Desconforto">D1-Dor/Desconforto</option>
               <option value="D1-Movimentos involuntários">D1-Movimentos involuntários</option>
@@ -2243,7 +2248,7 @@
             <label for="dropdown">Membros</label>
           </div>
           <div class="input-tab">
-            <select id="dropdown" name="membro_objetivo_principal_sec" required>
+            <select id="dropdown" name="membro_objetivo_principal_sec_1" required>
               <option disabled value selected>Selecione uma opção</option>
               <option value="Membros Superiores">Membros Superiores</option>
               <option value="Membros Inferiores">Membros Inferiores</option>
@@ -2254,7 +2259,7 @@
             <label for="dropdown">Categoria Secundária Baseline</label>
           </div>
           <div class="input-tab">
-            <select id="dropdown" name="baseline_score_sec" required>
+            <select id="dropdown" name="baseline_score_sec_1" required>
               <option readonly selected value="-1">-1</option>
             </select>
           </div>
@@ -2263,7 +2268,7 @@
             <label for="dropdown">Categoria Secundária Outcome</label>
           </div>
           <div class="input-tab">
-            <select id="dropdown" name="outcome_score_sec" required>
+            <select id="dropdown" name="outcome_score_sec_1" required>
               <option disabled value selected>Selecione uma opção</option>
               <option value="-2">-2</option>
               <option value="-1">-1</option>
@@ -2277,30 +2282,229 @@
 
         <!--GAS T Scores-->
         <fieldset style="border: white solid; margin-top: 20px;">
-          <legend>GAS T Scores</legend>
+          <legend>GAS T Scores 1</legend>
           <div class="labels">
             <label id="baseline-gastscore-label" for="baseline-gastscore">Baseline</label>
           </div>
           <div class="input-tab">
-            <input class="input-field" type="text" id="baseline-gastscore" name="baseline-gastscore" value="37.58"
+            <input class="input-field" type="text" id="baseline-gastscore_1" name="baseline-gastscore_1" value="37.58"
               readonly>
           </div>
 
           <div class="labels">
-            <label id="achieved-gastscore-label" for="achieved-gastscore">Achieved</label>
+            <label id="achieved-gastscore-label" for="achieved-gastscore_1">Achieved</label>
           </div>
           <div class="input-tab">
-            <input class="input-field" type="text" id="achieved-gastscore" name="achieved-gastscore" value="0" readonly>
+            <input class="input-field" type="text" id="achieved-gastscore_1" name="achieved-gastscore_1" value="0" readonly>
           </div>
 
           <div class="labels">
             <label id="change-gastscore-label" for="change-gastscore">Change</label>
           </div>
           <div class="input-tab">
-            <input class="input-field" type="text" id="change-gastscore" name="change-gastscore" value="0" readonly>
+            <input class="input-field" type="text" id="change-gastscore_1" name="change-gastscore_1" value="0" readonly>
           </div>
 
         </fieldset>
+
+
+        <!--Field Secondary Goal-->
+        <fieldset style="border: white solid; margin-top: 20px;">
+          <legend>Objetivo Secundário 2</legend>
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="objetivo_principal_categoria_sec_2" required>
+              <option disabled value selected>Selecione uma opção</option>
+              <option value="D1-Sintomas/Défices">D1-Sintomas/Défices</option>
+              <option value="D2-Actividades/Função">D2-Actividades/Função</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Subcategoria</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="objetivo_principal_subcategoria_sec_2" required>
+              <option disabled selected>Selecione uma opção</option>
+              <option value="D1-Dor/Desconforto">D1-Dor/Desconforto</option>
+              <option value="D1-Movimentos involuntários">D1-Movimentos involuntários</option>
+              <option value="D1-Amplitude de movimento/prevenção contracturas">D1-Amplitude de movimento/prevenção
+                contracturas</option>
+              <option value="D2-Funções passivas/cuidados">D2-Funções passivas/cuidados</option>
+              <option value="D2-Funções activas/actividade motora">D2-Funções activas/actividade motora</option>
+              <option value="D2-Mobilidade(transf/vert/marcha)">D2-Mobilidade(transf/vert/marcha)</option>
+              <option value="D2- Facilitating therapy">D2- Facilitating therapy</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Membros</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="membro_objetivo_principal_sec_2" required>
+              <option disabled selected>Selecione uma opção</option>
+              <option value="Membros Superiores">Membros Superiores</option>
+              <option value="Membros Inferiores">Membros Inferiores</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária Baseline</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="baseline_score_sec_2">
+              <option readonly selected value="-1">-1</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária Outcome</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="outcome_score_sec_2" required>
+              <option disabled selected>Selecione uma opção</option>
+              <option value="-2">-2</option>
+              <option value="-1">-1</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <!--GAS T Scores-->
+        <fieldset style="border: white solid; margin-top: 20px;">
+          <legend>GAS T Scores 2</legend>
+          <div class="labels">
+            <label id="baseline-gastscore-label" for="baseline-gastscore_2">Baseline</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="baseline-gastscore_2" name="baseline-gastscore_2" value="36.36"
+              readonly>
+          </div>
+
+          <div class="labels">
+            <label id="achieved-gastscore-label" for="achieved-gastscore_2">Achieved</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="achieved-gastscore_2" name="achieved-gastscore_2" value="0" readonly>
+          </div>
+
+          <div class="labels">
+            <label id="change-gastscore-label" for="change-gastscore_2">Change</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="change-gastscore_2" name="change-gastscore_2" value="0" readonly>
+          </div>
+
+        </fieldset>
+
+
+        <!--Field Secondary Goal-->
+        <fieldset style="border: white solid; margin-top: 20px;">
+          <legend>Objetivo Secundário 3</legend>
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="objetivo_principal_categoria_sec_3" required>
+              <option disabled selected>Selecione uma opção</option>
+              <option value="D1-Sintomas/Défices">D1-Sintomas/Défices</option>
+              <option value="D2-Actividades/Função">D2-Actividades/Função</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Subcategoria</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="objetivo_principal_subcategoria_sec_3" required>
+              <option disabled selected>Selecione uma opção</option>
+              <option value="D1-Dor/Desconforto">D1-Dor/Desconforto</option>
+              <option value="D1-Movimentos involuntários">D1-Movimentos involuntários</option>
+              <option value="D1-Amplitude de movimento/prevenção contracturas">D1-Amplitude de movimento/prevenção
+                contracturas</option>
+              <option value="D2-Funções passivas/cuidados">D2-Funções passivas/cuidados</option>
+              <option value="D2-Funções activas/actividade motora">D2-Funções activas/actividade motora</option>
+              <option value="D2-Mobilidade(transf/vert/marcha)">D2-Mobilidade(transf/vert/marcha)</option>
+              <option value="D2- Facilitating therapy">D2- Facilitating therapy</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Membros</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="membro_objetivo_principal_sec_3">
+              <option disabled selected>Selecione uma opção</option>
+              <option value="Membros Superiores">Membros Superiores</option>
+              <option value="Membros Inferiores">Membros Inferiores</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária Baseline</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="baseline_score_sec_3">
+              <option readonly selected value="-1">-1</option>
+            </select>
+          </div>
+
+          <div class="labels">
+            <label for="dropdown">Categoria Secundária Outcome</label>
+          </div>
+          <div class="input-tab">
+            <select id="dropdown" name="outcome_score_sec_3">
+              <option disabled selected>Selecione uma opção</option>
+              <option value="-2">-2</option>
+              <option value="-1">-1</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="NA">Não Aplicável</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <!--GAS T Scores-->
+        <fieldset style="border: white solid; margin-top: 20px;">
+          <legend>GAS T Scores 3</legend>
+          <div class="labels">
+            <label id="baseline-gastscore-label" for="baseline-gastscore_3">Baseline</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="baseline-gastscore_3" name="baseline-gastscore_3" value="35.51"
+              readonly>
+          </div>
+
+          <div class="labels">
+            <label id="achieved-gastscore-label" for="achieved-gastscore_3">Achieved</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="achieved-gastscore_3" name="achieved-gastscore_3" value="0" readonly>
+          </div>
+
+          <div class="labels">
+            <label id="change-gastscore-label" for="change-gastscore_3">Change</label>
+          </div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="change-gastscore_3" name="change-gastscore_3" value="0" readonly>
+          </div>
+
+        </fieldset>
+
       </fieldset>
 
 
@@ -2313,6 +2517,10 @@
           <textarea class="input-field" id="comments" name="comments" rows="10" cols="40"
             placeholder="Your comments..."></textarea>
         </div>
+      </div>
+
+      <div class="input-tab">
+        <input style="display: none;" value="" class="input-field" type="datetime" id="submissionDateTime" name="submissionDateTime" required>
       </div>
 
       <div class="btn">

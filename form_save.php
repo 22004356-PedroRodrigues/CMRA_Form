@@ -11,10 +11,12 @@ foreach ($_POST as $key => $value) {
 }
  $fname = 'data.csv'; //NAME OF THE FILE
 
+
  //Only when the file doesnt exist
  if(!file_exists($fname)){
     $fcon = fopen($fname,'a');
-    $header = ['Nome do Profissional', 'Nº Processo' , 'Nome' ,
+    $header = ['Data & Hora Registo',
+      'Nome do Profissional', 'Nº Processo' , 'Nome' ,
      'Data de Nascimento', 'Género' , 'Diagnóstico', 'Diagnóstico do AVC',
       'Insuficiência', 'Data do Primeiro AVC',
 
@@ -80,11 +82,20 @@ foreach ($_POST as $key => $value) {
 
 
       'Obj. Prim. - Cat. Princ.', 'Obj. Prim. - Subcat.', 'Obj. Prim. - Membros', 'Obj. Prim. - Baseline', 'Obj. Prim. - Outcome',
-      'Obj. Sec. - Cat. Sec.', 'Obj. Sec. - Subcat.', 'Obj. Sec. - Membros', 'Obj. Sec. - Baseline', 'Obj. Sec. - Outcome',   
+      'Obj. Sec. 1 - Cat. Sec.', 'Obj. Sec. 1 - Subcat.', 'Obj. Sec. 1 - Membros', 'Obj. Sec. 1 - Baseline', 'Obj. Sec. 1 - Outcome',
+      'Gas T 1 - Baseline', 'Gas T 1 - Achieved', 'Gas T 1 - Change',
 
-      'Gas T - Baseline', 'Gas T - Achieved', 'Gas T - Change',
+      'Obj. Sec. 2 - Cat. Sec.', 'Obj. Sec. 2 - Subcat.', 'Obj. Sec. 2 - Membros', 'Obj. Sec. 2 - Baseline', 'Obj. Sec. 2 - Outcome',
+      'Gas T 2 - Baseline', 'Gas T 2 - Achieved', 'Gas T 2 - Change',
 
-      'Comentários/Observações'
+      'Obj. Sec. 3 - Cat. Sec.', 'Obj. Sec. 3 - Subcat.', 'Obj. Sec. 3 - Membros', 'Obj. Sec. 3 - Baseline', 'Obj. Sec. 3 - Outcome',
+      'Gas T 3 - Baseline', 'Gas T 3 - Achieved', 'Gas T 3 - Change',
+
+      
+
+      'Comentários/Observações',
+
+      'Data/Hora/Segundo Submissão'
    ];
     fputcsv($fcon, $header, ';');
     fclose($fcon);
@@ -94,6 +105,29 @@ foreach ($_POST as $key => $value) {
  $fcon = fopen($fname,'a');
  fputcsv($fcon, $data, ';');
  fclose($fcon);
+
+if(false){
+   ##Does the job but creates an old xls file..
+   $csvFilePath = 'C:\Users\k17sun3\Desktop\Intercalar_Final\CMRA_Form-main\data.csv';
+   $excelFilePath = 'C:\Users\k17sun3\Desktop\Intercalar_Final\CMRA_Form-main\output.xls';
+
+   // Read the CSV file
+   $csvData = file_get_contents($csvFilePath);
+   $csvRows = explode("\n", $csvData);
+
+   // Create a new Excel file
+   $excelFile = fopen($excelFilePath, 'w');
+
+   // Write each row of CSV data as a row in Excel
+   foreach ($csvRows as $csvRow) {
+      $csvColumns = str_getcsv($csvRow);
+      $excelRow = implode("\t", $csvColumns);
+      fwrite($excelFile, $excelRow . "\n");
+   }
+
+   // Close the Excel file
+   fclose($excelFile);
+}
 
 ##Prints the page of success
 echo file_get_contents("success.html");
