@@ -1,0 +1,6 @@
+Em parceria com o Centro de Medicina de Reabilitação de Alcoitão (CMRA), foi possível concretizar um Trabalho Final de Curso que comporte componentes de Desenvolvimento tradicional Web e Aplicação de inteligência artificial para o estudo de uma prática clínica inovadora.
+
+O CMRA conta com mais de 50 anos de história, sendo um Centro de referência na Europa pelo alto investimento na reabilitação e aplicação de uma prática clínica inovadora, resultante em milhares de registos, tendo estes nunca antes sido submetidos a modelos de Machine Learning e Inteligência Artificial.
+
+Neste trabalho final de curso, é entregue ao CMRA um formulário digital, apresentando a possibilidade de redução de realizar registos de consultas em papel, bem como um estudo de redução de dimensão de variáveis, a fim de entregar aos clínicos uma visão matemática de quais as variáveis mais importantes na explicação da descrição de um paciente. Os resultados obtidos do estudo encontram-se presentes num relatório detalhado, apresentando todos os factos e conclusões obtidas com um parecer clínico, tendo inclusive sido publicado num jornal de renome as conclusões partilhando o conhecimento adquirir com o seio científico!
+
